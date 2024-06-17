@@ -1,0 +1,13 @@
+@relation dataset
+@attribute id{1,2,3,4,5,6}
+@attribute gender{male,female}
+@attribute age{28,25,26,30,29}
+@attribute salary{15,16,17,20}
+@attribute credit{39,27,42,40,64,72}
+@data
+1 male 28 15 39
+2 male 25 15 27
+3 female 26 16 42
+4 female 25 16 40
+5 female 30 17 64
+6 male 29 20 72
