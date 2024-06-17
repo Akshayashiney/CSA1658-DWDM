@@ -1,0 +1,22 @@
+pencils<-c(9,25,23,12,11,6,7,8,9,10)
+mean(pencils)
+median(pencils)
+mode=names(table(pencils))[table(pencils)==max(table(pencils))]
+mode
+Output:
+> pencils<-c(9,25,23,12,11,6,7,8,9,10)
+> mean(pencils)
+[1] 12
+> median(pencils)
+[1] 9.5
+> mode=names(table(pencils))[table(pencils)==max(table(pencils))]
+> mode
+[1] "9"
+8. the following table would be plotted as (x,y) points, with the first column being the x values as number of mobile phones sold and the second column being the y values as money. To use the scatter plot for how many mobile phones sold.
+x :4 1 5 7 10 2 50 25 90 36
+y :12 5 13 19 31 7 153 72 275 110
+input:
+#scatterplot
+x<-c(4,1,5,7,10,2,50,25,90,36)
+y<-c(12,5,13,19,31,7,153,72,275,110)
+scatter.smooth(x,y)
