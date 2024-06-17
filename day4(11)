@@ -1,0 +1,22 @@
+strike_rates <- c(100, 70, 60, 90, 90)
+min_max_normalization <- function(x) {
+(x - min(x)) / (max(x) - min(x))
+}
+normalized_min_max <- min_max_normalization(strike_rates)
+z_score_normalization <- function(x) {
+(x - mean(x)) / sd(x)
+}
+normalized_z_score <- z_score_normalization(strike_rates)
+mad_normalization <- function(x) {
+(x - mean(x)) / mad(x)
+}
+normalized_mad <- mad_normalization(strike_rates)
+decimal_scaling_normalization <- function(x) {
+x / 10^(ceiling(log10(max(x))))
+}
+normalized_decimal_scaling <- decimal_scaling_normalization(strike_rates)
+cat("Original Data:", strike_rates, "\n\n")
+cat("(a) Min-Max Normalization:", normalized_min_max, "\n")
+cat("(b) Z-Score Normalization:", normalized_z_score, "\n")
+cat("(c) Z-Score Normalization (MAD):", normalized_mad, "\n")
+cat("(d) Normalization by Decimal Scaling:", normalized_decimal_scaling, "\n")
