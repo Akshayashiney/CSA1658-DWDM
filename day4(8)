@@ -1,0 +1,10 @@
+marks <- c(55, 60, 71, 63, 55, 65, 50, 55, 58, 59, 61, 63, 65, 67, 71, 72, 75)
+bins_a <- cut(marks, breaks = 3, labels = c("Low", "Medium", "High"))
+bins_b <- cut(marks, breaks = seq(min(marks), max(marks), length.out = 4), labels = c("Low", "Medium", "High"))
+k <- 3
+clusters <- kmeans(matrix(marks), centers = k)
+bins_c <- cut(clusters$centers[clusters$cluster], breaks = 3, labels = c("Low", "Medium", "High"))
+par(mfrow = c(1, 3))
+hist(marks, main = "Equal-frequency (equi-depth) partitioning", col = "skyblue", breaks = 3)
+hist(marks, main = "Equal-width partitioning", col = "lightgreen", breaks = seq(min(marks), max(marks), length.out = 4))
+hist(marks, main = "Clustering", col = "lightpink", breaks = 3)
